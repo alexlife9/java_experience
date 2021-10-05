@@ -1,4 +1,4 @@
-package ru.alex_life.beginning.about.method.constructor.object;
+package ru.alex_life.beginning.aboutmethodconstructorobject;
 
 /**
  * Видео-курс UDEMY Java для начинающих с нуля.
