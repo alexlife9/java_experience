@@ -14,7 +14,7 @@ package ru.alex_life.cycles;
  * Для решения используйте StringBuilder и его метод setCharAt().
  *
  * @author Alex_life
- * @version 1.0
+ * @version 1.1
  * @since 11.10.2021
  */
 public class Cryptography {
@@ -22,11 +22,11 @@ public class Cryptography {
         if (s.isEmpty()) {
             return "empty";
         }
+        if (s.length() < 5) {
+            return s;
+        }
         StringBuilder builder = new StringBuilder(s);
         for (int i = 0; i < s.length() - 4; i++) {
-            if (s.length() <= 4) {
-                return s;
-                }
             builder.setCharAt(i, '#');
         }
         return builder.toString();
