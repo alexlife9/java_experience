@@ -14,26 +14,24 @@ package ru.alex_life.cycles;
  * Необходимо реализовать метод, который посчитает общую сумму заработка за отработанную неделю.
  *
  * @author Alex_life
- * @version 1.0
+ * @version 1.1 (упрощение читабельности)
  * @since 09.10.2021
  */
 public class WeeklySalary {
     public static int calculate(int[] hours) {
         int money = 0;
         for (int i = 0; i < hours.length; i++) {
-            if (i >= 0 && i < 5 && hours[i] > 8) {
-                money += (hours[i] - (hours[i] - 8)) * 10 + (hours[i] - 8) * 15;
-            } else {
-                if (i >= 0 && i < 5) {
-                    money += hours[i] * 10;
-                }
+            int check = hours[i];
+            int sum = (check - (check - 8)) * 10 + (check - 8) * 15;
+            if (i < 5 && check > 8) {
+                money += sum;
+            } else if (i < 5) {
+                money += check * 10;
             }
-            if (i >= 5 && i <= 6 && hours[i] > 8) {
-                money += (((hours[i] - (hours[i] - 8)) * 10 + (hours[i] - 8) * 15)) * 2;
-            } else {
-                if (i >= 5 && i <= 6) {
-                    money += (hours[i] * 10) * 2;
-                }
+            if (i >= 5 && i <= 6 && check > 8) {
+                money += sum * 2;
+            } else if (i >= 5 && i <= 6) {
+                money += (check * 10) * 2;
             }
         }
         return money;
