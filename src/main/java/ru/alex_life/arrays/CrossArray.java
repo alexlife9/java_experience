@@ -9,16 +9,16 @@ package ru.alex_life.arrays;
  * Нужно вывести на консоль числа, которые есть одновременно в первом и втором массиве.
  *
  * @author Alex_life
- * @version 1.0
+ * @version 1.1 - Переделал на форич
  * @since 19.10.2021
  */
 public class CrossArray {
     public static void printCrossEl(int[] left, int[] right) {
         int rsl = 0;
-        for (int i = 0; i < left.length; i++) {
-            for (int j = 0; j < right.length; j++) {
-                if (left[i] == right[j]) {
-                    rsl += left[i];
+        for (int k : left) {
+            for (int i : right) {
+                if (k == i) {
+                    rsl += k;
                     System.out.println(rsl);
                 }
             }
