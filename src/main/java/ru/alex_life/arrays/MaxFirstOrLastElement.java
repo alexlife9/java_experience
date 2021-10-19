@@ -12,14 +12,11 @@ package ru.alex_life.arrays;
  * сравнивает между собой первый и последний элемент и возвращает максимальное из двух значений.
  *
  * @author Alex_life
- * @version 1.0
+ * @version 2.0 - с помощью Math.max
  * @since 19.10.2021
  */
 public class MaxFirstOrLastElement {
     public static int getMaxValue(int[] array) {
-        if (array[0] > array.length) {
-            return array[0];
-        }
-        return array.length;
+        return Math.max(array[0], array.length);
     }
 }
