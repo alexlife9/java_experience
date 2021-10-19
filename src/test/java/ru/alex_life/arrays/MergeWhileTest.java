@@ -1,0 +1,79 @@
+package ru.alex_life.arrays;
+
+import org.junit.Test;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
+/**
+ * Упражнения курса job4j
+ * 1.1.6. Массивы
+ * 0.3. Объединить два отсортированных массива
+ *
+ * Даны два отсортированных по возрастанию массива. Как без сортировки их объединить в третий массив?
+ *
+ * @author Alex_life
+ * @version 2.0 - с помощью цикла While
+ * @since 19.10.2021
+ */
+public class MergeWhileTest {
+    @Test
+    public void whenBothEmpty() {
+        int[] expect = new int[0];
+        int[] result = MergeWhile.merge(
+                new int[0],
+                new int[0]
+        );
+        assertThat(result, is(expect));
+    }
+
+    @Test
+    public void whenReorder() {
+        int[] expect = {1, 2, 3, 4};
+        int[] result = MergeWhile.merge(
+                new int[] {1, 3},
+                new int[] {2, 4}
+        );
+        assertThat(result, is(expect));
+    }
+
+    @Test
+    public void whenAscOrder() {
+        int[] expect = {1, 2, 3, 4};
+        int[] result = MergeWhile.merge(
+                new int[] {1, 2},
+                new int[] {3, 4}
+        );
+        assertThat(result, is(expect));
+    }
+
+    @Test
+    public void whenLeftLess() {
+        int[] expect = {1, 2, 3, 3, 4};
+        int[] result = MergeWhile.merge(
+                new int[] {1, 2, 3},
+                new int[] {3, 4}
+        );
+        assertThat(result, is(expect));
+    }
+
+    @Test
+    public void whenLeftGreat() {
+        int[] expect = {1, 2, 3, 4, 4};
+        int[] result = MergeWhile.merge(
+                new int[] {1, 2},
+                new int[] {3, 4, 4}
+        );
+        assertThat(result, is(expect));
+    }
+
+    @Test
+    public void whenLeftEmpty() {
+        int[] expect = {1, 2, 3, 4};
+        int[] result = MergeWhile.merge(
+                new int[] {},
+                new int[] {1, 2, 3, 4}
+        );
+        assertThat(result, is(expect));
+    }
+}
