@@ -96,11 +96,8 @@ public class StringDemo {
         String a5 = " "; //тут уже есть один знак - пробел
         System.out.println(a5.isEmpty()); //поэтому будет false
 
-
-
-
-
-
+        StringBuilder sb1 = new StringBuilder("Hello");
+        String s = new String(sb1); //в параметр конструктора String можно передавать объект StringBuilder-а
+        System.out.println(s);
     }
-
 }
