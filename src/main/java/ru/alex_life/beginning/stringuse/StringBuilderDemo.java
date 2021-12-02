@@ -66,5 +66,15 @@ public class StringBuilderDemo {
         int i4 = sb4.capacity(); // capacity() -> int
         System.out.println(i4);  // возвращает количество мест в массиве, не обращая внимания на фактическую заполненность
         System.out.println(sb1.capacity()); // по умолчанию capacity пустого объекта StringBuilder = 16
+
+        StringBuilder sb5 = new StringBuilder("okay ");
+        char[] array = new char[] {'p', 'r', 'i', 'v', 'e', 't'};
+        sb5.append(array, 2, 2); //добавляем в конец StringBuilder-а часть массива с начальным индексом и указанной длиной остатка
+        System.out.println(sb5);
+
+        StringBuilder sb6 = new StringBuilder("okay");
+        char[] array2 = new char[] {'p', 'r', 'i', 'v', 'e', 't'};
+        sb6.insert(2, array2, 2, 4); //вставляем на указанный индекс часть массива с начальным индексом и указанной длиной остатка
+        System.out.println(sb6);
     }
 }

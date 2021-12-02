@@ -99,5 +99,9 @@ public class StringDemo {
         StringBuilder sb1 = new StringBuilder("Hello");
         String s = new String(sb1); //в параметр конструктора String можно передавать объект StringBuilder-а
         System.out.println(s);
+
+        char[] array = new char[] {'p', 'r', 'i', 'v', 'e', 't'};
+        String str = new String(array); //в параметр конструктора передаем массив чаров
+        System.out.println(str);
     }
 }
