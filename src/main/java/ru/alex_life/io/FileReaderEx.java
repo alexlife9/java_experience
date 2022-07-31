@@ -15,7 +15,7 @@ import java.io.IOException;
  */
 public class FileReaderEx {
     public static void main(String[] args) throws IOException {
-        try (FileReader reader = new FileReader("./test/rubai2.txt")) {
+        try (FileReader reader = new FileReader("./test/rubai5.txt")) {
             int character;
             while ((character = reader.read()) != -1) { //метод read читает файл посимвольно. когда наступит конец файла, возвращаем -1
                 System.out.print((char) character);

@@ -6,10 +6,12 @@ import java.io.IOException;
 /**
  * Видео-курс Черный пояс.
  * 9. Работа с файлами IO и NIO
- * 9.1. Введение в Стримы. FileWriter
+ * 9.3. Try with resources
+ * Позволяет сократить код и автоматически закрывать открытые потоки на ввод и на вывод
+ * при объявлении метода запись throws IOException позволяет убрать блок catch (IOException e)
  *
  * @author Alex_life
- * @version 1.0
+ * @version 2.0
  * @since 29.07.2022
  */
 public class FileWriterEx {
@@ -18,21 +20,12 @@ public class FileWriterEx {
                 + "Непонятного нет для меня под Луной.\n"
                 + "Мне известно, что мне ничего не известно!\n"
                 + "Вот последняя правда, открытая мной.\n";
-        FileWriter writer = null;
-        try {
-            //writer = new FileWriter("C:\\Projects\\java_experience\\test\\rubai.txt");
-            writer = new FileWriter("./test/rubai2.txt");
-            //writer.write(rubai); //можно сразу стринг записать в файл
-            //а можно посимвольно пройти и что-то потом с этими символами сделать
+        try (FileWriter writer = new FileWriter("./test/rubai4.txt")) { //в круглые скобки записываем ресурсы на чтение файла
+            //и если надо на запись через точку с запятой.
             for (int i = 0; i < rubai.length(); i++) {
                 writer.write(rubai.charAt(i));
             }
             System.out.println("Done!");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            writer.close();
         }
     }
-
 }
