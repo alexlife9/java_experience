@@ -1,9 +1,6 @@
 package ru.alex_life.collections;
 
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * Наглядная демонстрация добавления и вывода элементов в различных реализациях Set
@@ -41,5 +38,6 @@ public class UseSet {
         treeSet.add("банан");
         System.out.println(treeSet);
         System.out.println();
+
     }
 }
