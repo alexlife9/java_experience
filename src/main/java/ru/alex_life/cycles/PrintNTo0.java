@@ -17,4 +17,8 @@ public class PrintNTo0 {
             System.out.println(n - 1 - i);
         }
     }
+
+    public static void main(String[] args) {
+        out(5);
+    }
 }
