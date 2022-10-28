@@ -119,7 +119,8 @@ class CheckStudentOverGrade implements StudentCheck {
 }
 
 /* это функциональный интерфейс - он содержит всего ОДИН абстрактный метод
- * лямбды работают только с ФИ - только с ОДНИМ его методом */
+ * лямбды работают только с ФИ - только с ОДНИМ его методом
+ * чтобы каждый раз не создавать интерфейсы надо использовать Predicate - смотри StudentInfoPredicate */
 interface StudentCheck {
     boolean check(Student s);
 }
