@@ -23,7 +23,7 @@ public class ExampleConsumer {
     }
 
     public static void changeCar(Car2 car2, Consumer<Car2> carConsumer) {
-        carConsumer.accept(car2);
+        carConsumer.accept(car2); //меняем параметры машины
     }
 
     public static void main(String[] args) {

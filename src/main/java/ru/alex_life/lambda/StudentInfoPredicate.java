@@ -12,13 +12,6 @@ import java.util.function.Predicate;
  * @since 28.10.2022
  */
 public class StudentInfoPredicate {
-    void testStudents2(ArrayList<Student> al, Predicate<Student> pr) {
-        for (Student s : al) {
-            if (pr.test(s)) {
-                System.out.println(s);
-            }
-        }
-    }
 
     public static void main(String[] args) {
         Student student1 = new Student("Ivan", 'm', 22, 3, 8.3);
@@ -50,6 +43,13 @@ public class StudentInfoPredicate {
 
         //можно инвертировать результаты проверки отрицанием
         info.testStudents2(students, p1.negate()); //выведет все элементы НЕ удовлетворяющие условию
+    }
+    void testStudents2(ArrayList<Student> al, Predicate<Student> pr) {
+        for (Student s : al) {
+            if (pr.test(s)) { //метод test просто проверяет выполняется какое-либо условие или нет
+                System.out.println(s);
+            }
+        }
     }
 }
 

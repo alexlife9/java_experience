@@ -36,7 +36,6 @@ public class StudentInfoFunction {
 
         double result3 = avgAnyElem(students, stud -> (double) stud.age);
         System.out.println(result3);
-
     }
     private static double avgAnyElem(List<Student> list, Function<Student, Double> f) {
         double rsl = 0;
